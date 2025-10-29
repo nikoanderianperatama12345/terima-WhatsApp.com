@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  /* Navbar */
+  .navbar {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .navbar .menu {
+    font-size: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  .navbar h1 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* Header */
+  .header {
+    padding: 20px;
+  }
+  .header h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+  .header p {
+    color: #666;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+
+  /* Cards grid */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0 20px;
+  }
+  .card {
+    position: relative;
+    background: linear-gradient(135deg, #4CAF50, #2ecc71);
+    color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+  .card.red { background: linear-gradient(135deg, #ff6b6b, #f94d6a); }
+  .card.blue { background: linear-gradient(135deg, #2196f3, #00bcd4); }
+  .card.orange { background: linear-gradient(135deg, #ffb347, #ff9800); }
+
+  .card h3 {
+    font-size: 13px;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .card p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  .icon-box {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 6px;
+  }
+
+  /* Balance */
+  .balance {
+    margin: 20px;
+    background: linear-gradient(135deg, #a200ff, #d500f9);
+    color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+  .balance h3 {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+  }
+  .balance p {
+    margin-top: 5px;
+    font-size: 26px;
+    font-weight: 600;
+  }
+
+  /* Action buttons */
+  .actions {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #e8f8ff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  }
+  .action h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #007baf;
+    font-weight: 600;
+  }
+  .action p {
+    margin: 3px 0 0;
+    color: #555;
+    font-size: 13px;
+  }
+  .action .add-btn {
+    background: #00aaff;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 6px 10px;
+  }
+
+  .withdraw {
+    background: #e0fff6;
+  }
+  .withdraw h4 {
+    color: #009c6f;
+  }
+  .withdraw .add-btn {
+    background: #00cc88;
+  }
+
+  /* Referral section */
+  .referral {
+    background: #fff;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 15px 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  }
+  .referral h3 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .referral-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .referral-item {
+    display: flex;
+    flex-direction: column;
+  }
+  .referral-item span {
+    font-size: 14px;
+    color: #666;
+  }
+  .referral-item strong {
+    font-size: 18px;
+    color: #7b1fa2;
+    margin-top: 2px;
+  }
+  .referral .icon {
+    background: #00d182;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+
+  /* Smooth animation */
+  .card, .balance, .action, .referral {
+    transition: transform 0.2s;
+  }
+  .card:active, .balance:active, .action:active, .referral:active {
+    transform: scale(0.97);
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="menu">☰</div>
+    <h1>Dashboard</h1>
+  </div>
+
+  <div class="header">
+    <h2>Dashboard</h2>
+    <p>Selamat datang di portal user Anda, XyzNaaChan!</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon-box">✔</div>
+      <h3>WHATSAPP AKTIF</h3>
+      <p>1</p>
+    </div>
+    <div class="card red">
+      <div class="icon-box">✖</div>
+      <h3>WHATSAPP TERPUTUS</h3>
+      <p>0</p>
+    </div>
+    <div class="card blue">
+      <div class="icon-box">💬</div>
+      <h3>BLAST HARI INI</h3>
+      <p>1570</p>
+    </div>
+    <div class="card orange">
+      <div class="icon-box">💰</div>
+      <h3>REWARD HARI INI</h3>
+      <p>Rp0</p>
+    </div>
+  </div>
+
+  <div class="balance">
+    <div class="icon-box">💳</div>
+    <h3>BALANCE</h3>
+    <p>Rp785.000</p>
+  </div>
+
+  <div class="actions">
+    <div class="action">
+      <div>
+        <h4>TAMBAH BOT</h4>
+        <p>Kelola WhatsApp Bot</p>
+      </div>
+      <div class="add-btn">+</div>
+    </div>
+
+    <div class="action withdraw">
+      <div>
+        <h4>WITHDRAW</h4>
+        <p>Tarik Saldo</p>
+      </div>
+      <div class="add-btn">💬</div>
+    </div>
+  </div>
+
+  <div class="referral">
+    <h3>Program Referral</h3>
+    <div class="referral-box">
+      <div class="referral-item">
+        <span>Total Referral</span>
+        <strong>23</strong>
+      </div>
+      <div class="referral-item">
+        <span>Rate Komisi</span>
+        <strong>Rp 50/pesan</strong>
+      </div>
+      <div class="icon">🎧</div>
+    </div>
+  </div>
+
+<script>
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      alert('Tombol "' + btn.parentElement.querySelector('h4').innerText + '" ditekan!');
+    });
+  });
+</script>
+
+</body>
+</html>
